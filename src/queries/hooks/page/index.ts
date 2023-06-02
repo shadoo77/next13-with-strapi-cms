@@ -4,8 +4,8 @@ import { pageSchema, pageFallback } from './schema';
 import { queryKeys } from '@/queries/queryKeys';
 import { apiBaseURL } from '@/config/constants';
 import useRouter from '@/hooks/useRouter';
-import { getLocalizedParams } from '@/utils/localize';
-import { getData, isEmpty } from '@/utils';
+// import { getLocalizedParams } from '@/utils/localize';
+import { getData } from '@/utils';
 
 const fallback = {};
 

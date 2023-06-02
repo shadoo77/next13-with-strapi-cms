@@ -4,20 +4,20 @@ import Link from 'next/link';
 import { locales } from '@/i18n';
 import { useTranslation } from '@/contexts/translationContext';
 import useRouter from '@/hooks/useRouter';
-import { usePageData } from '@/queries/hooks/page';
+// import { usePageData } from '@/queries/hooks/page';
 
 function LanguageSwitcher() {
   const { asPath, locale } = useRouter();
 
   const { t } = useTranslation();
 
-  const {
-    data: pageData,
-    error,
-    isError,
-    isLoading,
-    isFetching
-  } = usePageData({ apiID: 'page', kind: 'collectionType' });
+  // const {
+  //   data: pageData,
+  //   error,
+  //   isError,
+  //   isLoading,
+  //   isFetching
+  // } = usePageData({ apiID: 'page', kind: 'collectionType' });
 
   return (
     <>
