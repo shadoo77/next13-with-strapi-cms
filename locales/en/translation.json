@@ -1,0 +1,86 @@
+{
+  "home": {
+    "title": "Find Products",
+    "description": "An overview of our products that will help you deliver the perfect results for any project"
+  },
+  "color-collection": {
+    "select": {
+      "label": "Select a colour collection"
+    }
+  },
+  "schemeName": {
+    "designersChoice": "Designers Choice",
+    "coordinating": "Co-ordinating",
+    "tonal": "Tonal"
+  },
+  "colorCombinationsLabel": "Colour combinations",
+  "selectProductButtonLabel": "Select product",
+  "product": "Product",
+  "productsListLabel": "{{productNr}} products",
+  "size": "Size",
+  "goBack": {
+    "toColor": "Back to color",
+    "toProducts": "Back to product",
+    "default": "Back"
+  },
+  "viewNrProductsLabel": "View {{productNr}} products",
+  "wetTesterButtonLabel": "Tester {{colorName}}",
+  "dryTesterButtonLabel": "Dry tester {{colorName}}",
+  "viewOptions": "Choose a size",
+  "finish": "Finish",
+  "keyInformation": "Key information",
+  "coverage": "Coverage",
+  "dryingTime": "Drying Time",
+  "coats": "Coats",
+  "features": "Features",
+  "productDescription": "Product description",
+  "applicationDescription": "Application description",
+  "healthAndSafety": "Health & Safety",
+  "downloadFile": "Download file",
+  "itemInStock": "Available",
+  "outOfStock": "Out of stock",
+  "colorCalculator": {
+    "quantity": "Quantity",
+    "paintCalculator": "Paint Calculator",
+    "calculate": "Calculate",
+    "measureIt": "Measure your dimensions",
+    "knowArea": "Do you know the area ?",
+    "fillDimensions": "Enter your surface measurements",
+    "wallsInputAreaLabel": "Surface you want to paint",
+    "surfaceNumber": "Surface {{wallNr}}",
+    "linkToSubDialogText": "How do I measure my area?",
+    "howMeasureIt": "Area in m",
+    "submitButtonLable": "Calculate results",
+    "infoModal": {
+      "title": "How much paint do I need?",
+      "description": "Measure the width and height of the surface you want to paint (in meters or centimeters).",
+      "buttonLabel": "Let's start"
+    },
+    "resultsModal": {
+      "yourDimensionsLabel": "Your surface measurements:",
+      "yourDimensionstext": "Total area: {{area}}",
+      "howMuchNeededLabel": "Quantity needed:",
+      "howMuchNeededText": "Based on {{numberOfCoats}} coats: {{neededMount}} Litres",
+      "description": "This is an estimate based on the specified number of coats. Actual coverage will depend on surface conditions. If the color change is strong, more coats may be needed.",
+      "recalculateButtonLabel": "Recalculate",
+      "wallNr": "<bold>Wall</bold> {{wallNr}}:",
+      "advice": "For best results, we recommend using <bold>{{numberOfCoats}}</bold> coats of <bold>{{productName}}</bold>.",
+      "adviceOnRequiredPaint": "We therefore recommend"
+    }
+  },
+  "m": "Meters",
+  "cm": "Centimeters",
+  "yes": "Yes",
+  "no": "No",
+  "width": "Width",
+  "height": "Height",
+  "addAnother": "Add another",
+  "required": "This value is required.",
+  "showDetails": "Show details",
+  "hideDetails": "Hide details",
+  "colorCollectionNotExist": "Color collection with id <bold>{{colorCollectionId}}</bold> is not found!",
+  "and": "and",
+  "addToCartFailed": "Could not add tester to cart",
+  "addToCartSuccess": "Tester added to cart",
+  "homePageSlug": "home-page"
+}

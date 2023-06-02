@@ -1,0 +1,85 @@
+{
+  "home": {
+    "title": "Find Products",
+    "description": "An overview of our products that will help you deliver the perfect results for any project"
+  },
+  "color-collection": {
+    "select": {
+      "label": "Sélectionnez une collection de couleurs"
+    }
+  },
+  "schemeName": {
+    "designersChoice": "Choix des concepteurs",
+    "coordinating": "Coordination",
+    "tonal": "Tonale"
+  },
+  "colorCombinationsLabel": "Combinaisons de couleurs",
+  "selectProductButtonLabel": "Sélectionner un produit",
+  "product": "Produit",
+  "productsListLabel": "{{productNr}} produits",
+  "size": "Taille",
+  "goBack": {
+    "default": "Retour",
+    "toColor": "Retour à la couleur",
+    "toProducts": "Retour aux produits"
+  },
+  "viewNrProductsLabel": "Afficher {{productNr}} produits",
+  "wetTesterButtonLabel": "Testeur {{colorName}}",
+  "dryTesterButtonLabel": "Testeur sec {{colorName}}",
+  "viewOptions": "Choisissez une taille",
+  "finish": "Éclat",
+  "keyInformation": "Information clé",
+  "coverage": "Couverture",
+  "dryingTime": "Temps de séchage",
+  "coats": "Couches",
+  "features": "Caractéristiques",
+  "productDescription": "Description du produit",
+  "applicationDescription": "Description de l'application",
+  "healthAndSafety": "Santé et sécurité",
+  "downloadFile": "Télécharger un fichier",
+  "itemInStock": "Disponible",
+  "outOfStock": "En rupture de stock",
+  "colorCalculator": {
+    "quantity": "Quantité",
+    "paintCalculator": "Calculateur de peinture",
+    "calculate": "Calculer",
+    "measureIt": "Mesurez vos dimensions",
+    "knowArea": "Connaissez-vous la région ?",
+    "fillDimensions": "Entrez vos mensurations",
+    "wallsInputAreaLabel": "Surface que vous souhaitez peindre",
+    "linkToSubDialogText": "Comment mesurer ma surface ?",
+    "surfaceNumber": "Surface {{wallNr}}",
+    "howMeasureIt": "Superficie en m",
+    "submitButtonLable": "Calculer les résultats",
+    "infoModal": {
+      "title": "De combien de peinture ai-je besoin ?",
+      "description": "Mesurez la largeur et la hauteur de la pièce que vous souhaitez peindre (en mètres ou en centimètres).",
+      "buttonLabel": "Laten we beginnen"
+    },
+    "resultsModal": {
+      "yourDimensionsLabel": "Vos mensurations:",
+      "yourDimensionstext": "Superficie totale : {{zone}}",
+      "howMuchNeededLabel": "Hoeveelheid nodig:",
+      "howMuchNeededText": "Basé sur {{numberOfCoats}} couches: {{neededMount}} litres",
+      "description": "Il s'agit d'une estimation basée sur le nombre de couches spécifié. La couverture réelle dépendra des conditions de surface. Si le changement de couleur est important, plusieurs couches peuvent être nécessaires.",
+      "recalculateButtonLabel": "Recalculer",
+      "wallNr": "<bold>Surface</bold> {{wallNr}}:",
+      "advice": "Pour de meilleurs résultats, nous vous recommandons d'utiliser <bold>{{numberOfCoats}}</bold> couches <bold>{{productName}}</bold>.",
+      "adviceOnRequiredPaint": "Nous recommandons donc"
+    }
+  },
+  "m": "Mètres",
+  "cm": "Centimètres",
+  "yes": "Oui",
+  "no": "Non",
+  "width": "Largeur",
+  "height": "Hauteur",
+  "addAnother": "Ajouter un autre",
+  "required": "Cette valeur est obligatoire.",
+  "showDetails": "Afficher les détails",
+  "hideDetails": "Cacher les détails",
+  "colorCollectionNotExist": "La collection de couleurs avec l'identifiant <bold>{{colorCollectionId}}</bold> est introuvable!",
+  "and": "et",
+  "addToCartFailed": "Impossible d'ajouter le testeur au panier",
+  "addToCartSuccess": "Testeur ajouté au panier"
+}

@@ -1,0 +1,87 @@
+{
+  "home": {
+    "title": "Find Products",
+    "description": "An overview of our products that will help you deliver the perfect results for any project"
+  },
+  "color-collection": {
+    "select": {
+      "label": "Kies kleur collectie"
+    }
+  },
+  "schemeName": {
+    "designersChoice": "Ontwerpers Keuze",
+    "coordinating": "Coördineren",
+    "tonal": "Tonaal"
+  },
+  "colorCombinationsLabel": "Kleurencombinaties",
+  "selectProductButtonLabel": "Selecteer product",
+  "product": "Product",
+  "productsListLabel": "{{productNr}} producten",
+  "size": "Maat",
+  "goBack": {
+    "toColor": "Terug naar kleur",
+    "toProducts": "Terug naar product",
+    "default": "Terug"
+  },
+  "viewNrProductsLabel": "Bekijk {{productNr}} producten",
+  "wetTesterButtonLabel": "Tester {{colorName}}",
+  "dryTesterButtonLabel": "Droge tester {{colorName}}",
+  "viewOptions": "Kies een maat",
+  "finish": "Glans",
+  "keyInformation": "Kenmerken",
+  "coverage": "Dekking",
+  "dryingTime": "Droog tijd",
+  "coats": "Lagen",
+  "features": "Kenmerken",
+  "productDescription": "Product omschrijving",
+  "applicationDescription": "Toepassing",
+  "healthAndSafety": "Veiligheidsvoorschriften",
+  "downloadFile": "Download document",
+  "itemInStock": "Op voorraad",
+  "outOfStock": "Niet op voorraad",
+  "colorCalculator": {
+    "quantity": "Aantal",
+    "paintCalculator": "Verfcalculator",
+    "calculate": "Bereken",
+    "measureIt": "Meet je afmetingen",
+    "knowArea": "Weet je de grootte van het oppervlak?",
+    "fillDimensions": "Vul je afmetingen in",
+    "wallsInputAreaLabel": "Ruimte die je wil verven",
+    "surfaceNumber": "Oppervlak {{wallNr}}",
+    "linkToSubDialogText": "Hoe meet ik mijn oppervlakte op?",
+    "howMeasureIt": "Oppervlakte in m",
+    "submitButtonLable": "Resultaten berekenen",
+    "infoModal": {
+      "title": "Hoeveel verf heb ik nodig?",
+      "description": "Meet de breedte en de hoogte van de oppervlakte die je wil schilderen (in meter of centimeter).",
+      "buttonLabel": "Laten we beginnen"
+    },
+    "resultsModal": {
+      "yourDimensionsLabel": "Jouw afmetingen:",
+      "yourDimensionstext": "Totale oppervlakte: {{area}}",
+      "howMuchNeededLabel": "Hoeveelheid nodig:",
+      "howMuchNeededText": "Gebaseerd op {{numberOfCoats}} lagen: {{neededMount}} liters",
+      "description": "Dit is een schatting op basis van het gespecificeerde aantal lagen. De daadwerkelijke dekking hangt af van de omstandigheden van het oppervlak. Als de kleurverandering sterk is, zijn mogelijk meer lagen nodig.",
+      "recalculateButtonLabel": "Herbereken",
+      "wallNr": "<bold>Oppervlak</bold> {{wallNr}}:",
+      "advice": "Voor het beste resultaat raden we aan om <bold>{{numberOfCoats}}</bold> lagen te gebruiken <bold>{{productName}}</bold>.",
+      "adviceOnRequiredPaint": "Wij raden daarom aan"
+    }
+  },
+  "m": "Meters",
+  "cm": "Centimeters",
+  "yes": "Ja",
+  "no": "Nee",
+  "width": "Lengte",
+  "height": "Hoogte",
+  "addAnother": "Nog een toevoegen",
+  "required": "Deze waarde is vereist.",
+  "showDetails": "Toon details",
+  "hideDetails": "Verberg details",
+  "colorCollectionNotExist": "Kleur collectie met id <bold>{{colorCollectionId}}</bold> is niet gevonden!",
+  "and": "en",
+  "addToCartFailed": "Kan tester niet toevoegen aan winkelwagen",
+  "addToCartSuccess": "Tester toegevoegd aan winkelwagen",
+
+  "homePageSlug": "home-pagina"
+}
