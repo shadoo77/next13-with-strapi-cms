@@ -27,13 +27,11 @@ export default async function Home(props: any) {
 
   const { t } = await useServerTranslation(lng);
 
-  const anyVar = 'sfldgkf';
-
   return (
     <Suspense fallback={<div>loading..</div>}>
       <Hydrate state={dehydratedState}>
         <main>
-          <h2>Hello Master - now on staging agian with attempts to fail !</h2>
+          <h2>Hello Master - now on staging agian</h2>
           <h2>{t('addToCartFailed')}</h2>
           <Link href={`/${lng}/about`}>second page</Link>
         </main>
