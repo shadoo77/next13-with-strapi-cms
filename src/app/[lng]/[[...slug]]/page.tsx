@@ -27,8 +27,6 @@ export default async function Home(props: any) {
 
   const { t } = await useServerTranslation(lng);
 
-  const jjd = 'sds';
-
   return (
     <Suspense fallback={<div>loading..</div>}>
       <Hydrate state={dehydratedState}>
