@@ -31,7 +31,7 @@ export default async function Home(props: any) {
     <Suspense fallback={<div>loading..</div>}>
       <Hydrate state={dehydratedState}>
         <main>
-          <h2>Hello Master - try to make a mistake !!!</h2>
+          <h2>Hello Master - now on staging agian</h2>
           <h2>{t('addToCartFailed')}</h2>
           <Link href={`/${lng}/about`}>second page</Link>
         </main>
