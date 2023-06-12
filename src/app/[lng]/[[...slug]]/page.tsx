@@ -27,11 +27,13 @@ export default async function Home(props: any) {
 
   const { t } = await useServerTranslation(lng);
 
+  const jjd = 'sds';
+
   return (
     <Suspense fallback={<div>loading..</div>}>
       <Hydrate state={dehydratedState}>
         <main>
-          <h2>Hello Master again</h2>
+          <h2>Hello Master - try to make a mistake !!!</h2>
           <h2>{t('addToCartFailed')}</h2>
           <Link href={`/${lng}/about`}>second page</Link>
         </main>
