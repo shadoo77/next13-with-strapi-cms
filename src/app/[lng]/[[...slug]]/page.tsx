@@ -26,12 +26,13 @@ export default async function Home(props: any) {
   const dehydratedState = dehydrate(queryClient);
 
   const { t } = await useServerTranslation(lng);
+  const jjj = 'dfdfdf';
 
   return (
     <Suspense fallback={<div>loading..</div>}>
       <Hydrate state={dehydratedState}>
         <main>
-          <h2>Hello Staging</h2>
+          <h2>Hello Staging - new deployment</h2>
           <h2>{t('addToCartFailed')}</h2>
           <Link href={`/${lng}/about`}>second page</Link>
         </main>
