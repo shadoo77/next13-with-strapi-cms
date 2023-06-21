@@ -1,3 +1,5 @@
+'use client';
+
 import { SyntheticEvent } from 'react';
 
 // material-ui

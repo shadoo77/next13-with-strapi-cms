@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Button } from '@mui/material';
 import Link from 'next/link';
 
