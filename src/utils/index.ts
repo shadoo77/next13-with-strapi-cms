@@ -24,6 +24,32 @@ export function getQueryString(params: ParsedUrlQuery | Record<string, unknown>)
     .join('&')}`;
 }
 
+// Parse json safely
+export const safelyParseJSON = (jsonString: string | null | undefined) => {
+  if (!jsonString) {
+    return null;
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(jsonString);
+  } catch (e) {
+    return null;
+  }
+
+  return parsed as Record<string, unknown>;
+};
+
+// Get parsed key from localStorage
+export const getParsedItemFromLocalStorageByKey = (key: string) => {
+  if (!isSSR) {
+    const storedLocalStorage = localStorage.getItem(key);
+    if (storedLocalStorage) {
+      return safelyParseJSON(storedLocalStorage);
+    }
+  }
+  return null;
+};
+
 // Get strapi media url
 export function getStrapiMedia(url: string) {
   if (url == null) {

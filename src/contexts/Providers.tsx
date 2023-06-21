@@ -1,11 +1,9 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import { useThemeStore } from '@/store/themeStore';
+import { ReactNode } from 'react';
 import { TranslationProvider } from '@/contexts/translationContext';
 import { Locale, fallbackLng } from '@/i18n';
-import { useAppThemes } from '@/queries/hooks/theme';
+import ThemeCustomization from '@/themes';
 
 interface IProvidersProps {
   children: ReactNode;
@@ -13,18 +11,9 @@ interface IProvidersProps {
 }
 
 export default function Providers({ lng, children }: IProvidersProps) {
-  const { data: themes } = useAppThemes();
-  const { activeTheme, setThemes } = useThemeStore();
-
-  useEffect(() => {
-    if (themes?.length) {
-      setThemes(themes);
-    }
-  }, [themes, setThemes]);
-
   return (
     <TranslationProvider lng={lng || fallbackLng}>
-      <ThemeProvider theme={activeTheme.value}>{children}</ThemeProvider>
+      <ThemeCustomization>{children}</ThemeCustomization>
     </TranslationProvider>
   );
 }

@@ -1,13 +1,19 @@
 import { ILocale } from '@/config/locales';
 
 export const CONSTANTS = Object.freeze({
+  APPBAR_HEIGHT: 100,
   MY_APP_SNACKBAR_STORAGE: 'test-my-app--snackbar-sorage',
-  MY_APP_THEME_STORAGE: 'test-my-app--theme-sorage'
+  MY_APP_MENU_STORAGE: 'test-my-app--menu-sorage'
+});
+
+export const ENV = Object.freeze({
+  MIANTENANCE_MODE: process.env.NEXT_PUBLIC_MIANTENANCE_MODE
 });
 
 export const ROUTES = Object.freeze({
   HOME: '',
-  PRODUCTS: 'products'
+  PRODUCTS: 'products',
+  MAINTENANCE: 'maintenance'
 });
 
 interface HomePageSlug {
