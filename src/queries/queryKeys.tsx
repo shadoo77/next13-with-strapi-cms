@@ -2,5 +2,6 @@ export const queryKeys = {
   page: 'page',
   pages: 'pages',
   pageData: 'pageData',
-  globalInfo: 'globalInfo'
+  maintenance: 'maintenance',
+  themeConfig: 'themeConfig'
 };

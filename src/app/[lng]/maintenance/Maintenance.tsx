@@ -1,13 +1,12 @@
 'use client';
 
 import { Container, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-
 import { CustomStyledCard } from '@/components/ui-components/CustomCard';
-import { useGlobalInfo } from '@/queries/hooks/globalInfo';
+import { useMaintenance } from '@/queries/hooks/maintenance';
 import Backdrop from '@/components/ui-components/BackDrop';
 
 export default function MaintenancePage() {
-  const { data, isLoading, isFetching } = useGlobalInfo();
+  const { data, isLoading, isFetching } = useMaintenance();
 
   if (isFetching || isLoading) {
     return <Backdrop open={isFetching} />;
@@ -17,9 +16,7 @@ export default function MaintenancePage() {
     return null;
   }
 
-  const {
-    maintenanceCard: { title, description, image }
-  } = data;
+  const { title, description, image } = data;
 
   const { url, caption } = image;
 

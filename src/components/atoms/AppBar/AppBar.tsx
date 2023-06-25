@@ -17,7 +17,6 @@ import SiteLogo from '../SiteLogo/SiteLogo';
 import { Search } from '@/components/atoms/Search';
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 import { CONSTANTS, ENV } from '@/config/constants';
-import { useGlobalInfo } from '@/queries/hooks/globalInfo';
 import { useMenuStore } from '@/store/menuStore';
 import { safelyParseJSON } from '@/utils';
 
@@ -38,10 +37,6 @@ const MenuIcon = forwardRef((props, ref: Ref<HTMLDivElement>) => {
 });
 
 function AppBar() {
-  const {
-    data: { siteLogo }
-  } = useGlobalInfo();
-
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -91,7 +86,7 @@ function AppBar() {
               paddingLeft: { sm: 1, md: 0 }
             }}
           >
-            <SiteLogo data={siteLogo} />
+            <SiteLogo />
             {appbarContent}
           </Toolbar>
         </Container>

@@ -27,7 +27,7 @@ import theme3 from '@/scss/_theme3.module.scss';
 import theme4 from '@/scss/_theme4.module.scss';
 import theme5 from '@/scss/_theme5.module.scss';
 import theme6 from '@/scss/_theme6.module.scss';
-import { useGlobalInfo } from '@/queries/hooks/globalInfo';
+import { useThemeConfig } from '@/queries/hooks/themeConfig';
 
 // types
 interface Props {
@@ -35,7 +35,7 @@ interface Props {
 }
 
 export default function ThemeCustomization({ children }: Props) {
-  const { data } = useGlobalInfo();
+  const { data } = useThemeConfig();
   const { borderRadius, fontFamily, navType, outlinedFilled, presetColor } = data;
 
   const theme: Theme = useMemo<Theme>(() => Palette(navType, presetColor), [navType, presetColor]);
