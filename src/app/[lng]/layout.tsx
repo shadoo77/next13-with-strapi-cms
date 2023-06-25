@@ -8,35 +8,32 @@ import { getQueryClient } from '@/queries/queryClient';
 import QueryClientProvider from '@/queries/QueryClientProvider';
 import { Locale, locales } from '@/i18n';
 import Providers from '@/contexts/Providers';
-import { getGlobalInfo, getGlobalInfoByLocale } from '@/queries/hooks/globalInfo';
 import { queryKeys } from '@/queries/queryKeys';
+import { useServerTranslation as getServerTranslation } from '@/i18n/server';
+import { getThemeConfig } from '@/queries/hooks/themeConfig';
 
 export async function generateStaticParams() {
   return locales.map((lng) => ({ lng }));
 }
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], preload: true });
 
 type Props = {
   params: { lng: Locale };
 };
 
 export async function generateMetadata({ params: { lng } }: Props): Promise<Metadata> {
-  let siteTitle = 'My App';
-  let siteDescription = 'any description';
+  const { t } = await getServerTranslation(lng);
 
-  try {
-    ({ siteTitle, siteDescription } = await getGlobalInfoByLocale(lng));
-  } catch (error) {
-    // console.error(error);
-  }
+  const siteTitle = 'Sells Advies';
+  const description = t('siteDescription') || 'any description';
 
   const metadata: Metadata = {
     title: {
       template: `%s | ${siteTitle}`,
-      absolute: `${siteTitle}`
+      absolute: siteTitle
     },
-    description: siteDescription
+    description
   };
 
   return metadata;
@@ -51,7 +48,7 @@ export default async function RootLayout({
 }) {
   const queryClient = getQueryClient();
 
-  await queryClient.prefetchQuery([queryKeys.globalInfo, lng], getGlobalInfo);
+  await queryClient.prefetchQuery([queryKeys.themeConfig], getThemeConfig);
 
   const dehydratedState = dehydrate(queryClient);
 
@@ -60,11 +57,9 @@ export default async function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true}>
         <QueryClientProvider>
           <Hydrate state={dehydratedState}>
-            {/* <EmotionRootStyleRegistry> */}
             <Providers lng={lng}>
               <AppWrapper>{children}</AppWrapper>
             </Providers>
-            {/* </EmotionRootStyleRegistry> */}
           </Hydrate>
         </QueryClientProvider>
       </body>

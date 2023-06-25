@@ -1,24 +1,34 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Link as MuiLink } from '@mui/material';
-import { GlobalInfo } from '@/queries/hooks/globalInfo/schema';
+import { Link as MuiLink, Box, useMediaQuery, useTheme } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import SVG from '@/components/atoms/Icon';
+import { CONSTANTS } from '@/config/constants';
 
-function SiteLogo({ data }: { data: GlobalInfo['siteLogo'] }) {
-  const {
-    alternativeText,
-    formats: { thumbnail }
-  } = data;
+const logoHeight = CONSTANTS.APPBAR_HEIGHT - 10;
+const logoHeightMdDown = logoHeight - 20;
 
-  if (!thumbnail) {
-    return null;
+const StyledBox = styled(Box)`
+  max-height: ${logoHeight}px;
+
+  svg {
+    fill: #fff;
   }
+`;
 
-  const { url, width, height } = thumbnail;
+function SiteLogo() {
+  const theme = useTheme();
+  const matchMdDown = useMediaQuery(theme.breakpoints.down('md'));
+
+  const width = `${matchMdDown ? '190' : '225'}`;
+  const height = `${matchMdDown ? logoHeightMdDown : logoHeight}`;
 
   return (
     <MuiLink component={Link} href={'/'} aria-label="theme-logo">
-      <Image src={url} alt={alternativeText} width={width} height={height} priority />
+      <StyledBox display="flex" gap={1}>
+        <SVG name="Logo" height={height} width={height} />
+        <SVG name="LogoText" width={width} height={height} />
+      </StyledBox>
     </MuiLink>
   );
 }
