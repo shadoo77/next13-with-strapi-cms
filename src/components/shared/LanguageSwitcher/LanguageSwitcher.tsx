@@ -1,42 +1,44 @@
 'use client';
 
-import Link from 'next/link';
-import { locales } from '@/i18n';
-import { useTranslation } from '@/contexts/translationContext';
+import { useState } from 'react';
+import { Box, TextField, MenuItem } from '@mui/material';
+import { Locale, languages } from '@/i18n';
 import useRouter from '@/hooks/useRouter';
-// import { usePageData } from '@/queries/hooks/page';
 
-function LanguageSwitcher() {
-  const { asPath, locale } = useRouter();
+export default function LanguageSwitcher() {
+  const { asPath, locale, replace } = useRouter();
+  const [language, setLanguage] = useState<Locale>(locale);
 
-  const { t } = useTranslation();
-
-  // const {
-  //   data: pageData,
-  //   error,
-  //   isError,
-  //   isLoading,
-  //   isFetching
-  // } = usePageData({ apiID: 'page', kind: 'collectionType' });
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const lang = event.target.value as Locale;
+    setLanguage(lang);
+    replace(lang + asPath);
+  };
 
   return (
-    <>
-      <h2>LanguageSwitcher</h2>
-      <h2>{t('size')}</h2>
-      <div style={{ marginTop: 50 }}>
-        {locales
-          .filter((l) => locale !== l)
-          .map((l, index) => {
-            return (
-              <span key={l}>
-                {index > 0 && ' or '}
-                <Link href={l + asPath}>{l}</Link>
-              </span>
-            );
-          })}
-      </div>
-    </>
+    <Box>
+      <TextField
+        id="outlined-select-currency"
+        select
+        value={language}
+        onChange={handleChange}
+        sx={{ '& .MuiSelect-select': { p: 1 } }}
+      >
+        {languages.map((option, idx) => (
+          <MenuItem key={idx} value={option.locale} sx={{ px: 1, minHeight: 'auto' }}>
+            <Box sx={{ '& > img': { mr: 1, flexShrink: 0 } }}>
+              <img
+                loading="lazy"
+                width="20"
+                src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                alt=""
+              />
+              {option.label}
+            </Box>
+          </MenuItem>
+        ))}
+      </TextField>
+    </Box>
   );
 }
-
-export default LanguageSwitcher;

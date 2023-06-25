@@ -1,22 +1,22 @@
-'use client';
+// 'use client';
 
-import { useRef } from 'react';
-import { getOverrideThemes } from './themeStore/helpers';
-import { ThemeResponse, useThemeStore } from '@/store/themeStore';
+// import { useRef } from 'react';
+// import { useConfigStore } from '@/store/configStore';
+// import { ConfigProps } from '@/types/defaultTheme';
 
-function StoreInitializer({ themesData }: { themesData: ThemeResponse[] }) {
-  const initialized = useRef(false);
-  if (!initialized.current) {
-    useThemeStore.setState((prevState) => {
-      if (!themesData?.length) {
-        return { ...prevState };
-      }
-      const themes = getOverrideThemes(themesData, prevState.activeTheme.value);
-      return { ...prevState, themes, activeTheme: themes[0] };
-    });
-    initialized.current = true;
-  }
-  return null;
-}
+// function StoreInitializer({ config }: { config: ConfigProps }) {
+//   const initialized = useRef(false);
+//   if (!initialized.current) {
+//     useConfigStore.setState((prevState) => {
+//       if (!config) {
+//         return { ...prevState };
+//       }
 
-export default StoreInitializer;
+//       return { ...prevState, ...config };
+//     });
+//     initialized.current = true;
+//   }
+//   return null;
+// }
+
+// export default StoreInitializer;

@@ -34,7 +34,7 @@ export const config = {
 
 const cookieName = 'i18next';
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const headersRefererUrl = req.headers.get('referer') || '';
   let lng;
   if (req.cookies.has(cookieName)) lng = acceptLanguage.get(req.cookies.get(cookieName)?.value);
@@ -43,10 +43,21 @@ export function middleware(req: NextRequest) {
 
   // Check if there is any supported locale in the pathname
   const pathname = req.nextUrl.pathname;
+
+  const isInMaintenancePage = locales.some((locale) => pathname === `/${locale}/maintenance`);
+  const inMaintenance = JSON.parse(process.env.NEXT_PUBLIC_MIANTENANCE_MODE || '');
+
+  if (inMaintenance && !isInMaintenancePage) {
+    return NextResponse.redirect(new URL(`/${lng}/maintenance`, req.url));
+  }
+
+  if (!inMaintenance && isInMaintenancePage) {
+    return NextResponse.redirect(new URL(`/${lng}`, req.url));
+  }
+
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
-
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     // e.g. incoming request is /products
