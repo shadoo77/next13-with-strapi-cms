@@ -7,7 +7,9 @@ export const CONSTANTS = Object.freeze({
 });
 
 export const ENV = Object.freeze({
-  MIANTENANCE_MODE: process.env.NEXT_PUBLIC_MIANTENANCE_MODE
+  MIANTENANCE_MODE: process.env.NEXT_PUBLIC_MIANTENANCE_MODE,
+  GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
+  GA_ID: process.env.NEXT_PUBLIC_GA_ID
 });
 
 export const ROUTES = Object.freeze({
@@ -28,3 +30,6 @@ export const homePageSlug: HomePageSlug = Object.freeze({
 export const baseURL = `${process.env.NEXT_PUBLIC_API_URL}` || 'http://localhost:1337';
 
 export const apiBaseURL = `${baseURL}/api`;
+
+export const isProduction = process.env.NODE_ENV === 'production';
+export const isDevelopment = process.env.NODE_ENV === 'development';
