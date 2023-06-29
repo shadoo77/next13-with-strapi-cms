@@ -13,9 +13,9 @@ import {
   useTheme
 } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
-import { Trans } from 'next-i18next';
 import { useLocalStorage } from 'usehooks-ts';
 import { isSSR } from '@/utils';
+import { Trans } from '@/components/atoms/Trans';
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
