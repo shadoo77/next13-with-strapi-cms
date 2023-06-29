@@ -9,7 +9,7 @@ export const CONSTANTS = Object.freeze({
 export const ENV = Object.freeze({
   MIANTENANCE_MODE: process.env.NEXT_PUBLIC_MIANTENANCE_MODE,
   GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
-  GA_ID: process.env.NEXT_PUBLIC_GA_ID || 'G-7NP8T781G1'
+  GA_ID: process.env.NEXT_PUBLIC_GA_ID
 });
 
 export const ROUTES = Object.freeze({
