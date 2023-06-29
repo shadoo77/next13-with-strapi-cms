@@ -3,7 +3,7 @@
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { useEffect } from 'react';
-import { ENV } from '@/config/constants';
+import { ENV, isProduction } from '@/config/constants';
 import { pageview } from '@/components/organisms/Analytics/EventService';
 
 export default function Analytics() {
@@ -16,9 +16,9 @@ export default function Analytics() {
     }
   }, [pathname, searchParams]);
 
-  // if (process.env.NODE_ENV !== 'production') {
-  //   return null;
-  // }
+  if (!isProduction) {
+    return null;
+  }
 
   return (
     <>

@@ -83,5 +83,6 @@
   "addToCartFailed": "Could not add tester to cart",
   "addToCartSuccess": "Tester added to cart",
   "homePageSlug": "home-page",
-  "siteDescription": "Sells Advies is the way to find your best deals with the most competetive prices"
+  "siteDescription": "Sells Advies is the way to find your best deals with the most competetive prices",
+  "cookieConsentText": "We use <bold>{{ cookies }}</bold> in our website"
 }

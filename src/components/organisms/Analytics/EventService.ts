@@ -1,7 +1,7 @@
 'use client';
 
-import { ENV } from '@/config/constants';
-import { isSSR, isGtag } from '@/utils';
+import { ENV, isProduction } from '@/config/constants';
+import { isSSR } from '@/utils';
 
 type GTagEvent = {
   action: string;
@@ -11,15 +11,23 @@ type GTagEvent = {
 };
 
 export const pageview = (url: string) => {
-  if (!isSSR && isGtag) {
-    window.gtag('config', ENV.GA_ID, {
+  if (!isProduction) {
+    return;
+  }
+
+  if (!isSSR && typeof window.gtag !== 'undefined') {
+    window.gtag('config', ENV.GA_ID || '', {
       page_path: url
     });
   }
 };
 
 export const event = ({ action, category, label, value }: GTagEvent) => {
-  if (!isSSR && isGtag) {
+  if (!isProduction) {
+    return;
+  }
+
+  if (!isSSR && typeof window.gtag !== 'undefined') {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,

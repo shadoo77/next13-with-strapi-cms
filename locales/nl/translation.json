@@ -84,5 +84,6 @@
   "addToCartSuccess": "Tester toegevoegd aan winkelwagen",
 
   "homePageSlug": "home-pagina",
-  "siteDescription": "Sells Advies is de manier om uw beste deals te vinden met de scherpste prijzen"
+  "siteDescription": "Sells Advies is de manier om uw beste deals te vinden met de scherpste prijzen",
+  "cookieConsentText": "Wij gebruiken <bold>{{ cookies }}</bold> in onze website."
 }
