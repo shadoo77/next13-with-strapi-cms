@@ -5,6 +5,9 @@ import { apiBaseURL, baseURL } from '@/config/constants';
 // Check whether it's a server side or client side
 export const isSSR = typeof window === 'undefined';
 
+// Check gtag func
+export const isGtag = !isSSR && typeof window.gtag !== 'undefined';
+
 // Check if some variable, array or object is empty
 export const isEmpty = <T>(value: T): boolean =>
   value === undefined ||
